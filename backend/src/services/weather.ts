@@ -62,5 +62,6 @@ export class WeatherService {
     const channel = await this.rabbitmqConnection.createChannel();
     await channel.assertQueue('weather-notifications');
     channel.sendToQueue('weather-notifications', Buffer.from(JSON.stringify({ location, timestamp: new Date() })));
+    await channel.close();
   }
 }

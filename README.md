@@ -57,6 +57,8 @@ NEXT_PUBLIC_API_URL=http://localhost:4000
 https://github.com/adityamputra27/weather-app-microservice.git
 weather-app-microservice
 ```
+## Environment dev/build
+you can rename all file that contains .production and remove that same file name before
 
 ## Docker Setup
 ### The application is fully dockerized. Use the following command to build and run the app:
