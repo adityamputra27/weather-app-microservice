@@ -2,19 +2,34 @@ version: '3.8'
 
 services:
   backend:
-    build: ./backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      target: development
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    command: npm run dev
     ports:
       - 4000:4000
     environment:
       - MONGODB_URI=mongodb://mongodb:27017/test
       - REDIS_URL=redis://redis:6379
       - RABBITMQ_URL=amqp://rabbitmq:5672
+      - NODE_ENV=development
     depends_on:
       - mongodb
       - redis
       - rabbitmq
   frontend:
-    build: ./frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      target: development
+    command: npm run dev
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
     ports:
       - 3000:3000
     environment:
