@@ -65,8 +65,8 @@ docker-compose up --build
 ```
 
 This command will:
-1. Start MongoDB, Redis, and RabbitMQ containers.
-2. Launch the Backend service on http://localhost:5000.
+1. Start Redis, and RabbitMQ containers.
+2. Launch the Backend service on http://localhost:4000.
 3. Launch the Frontend service on http://localhost:3000.
 
 ## How to Use
