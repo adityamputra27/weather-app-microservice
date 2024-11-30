@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, { useState } from "react";
 
 interface WeatherDisplayProps {
@@ -81,7 +82,7 @@ export const WeatherDisplay: React.FC<WeatherDisplayProps> = ({
               <p className="text-slate-400 text-lg">Feels like {unit == 'C' ? kelvinToCelsius(Number(weatherData.current.feels_like)) : kelvinToFahrenheit(Number(weatherData.current.feels_like))}°{unit}</p>
             </div>
             <div>
-              <img src={`https://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}@2x.png`} alt={weatherData.current.weather[0].description} className="w-24" />
+              <Image src={`https://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}@2x.png`} alt={weatherData.current.weather[0].description} width={100} height={100} />
             </div>
           </div>
           <div className="flex items-center justify-between mt-5">
